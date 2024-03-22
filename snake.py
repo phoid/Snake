@@ -27,7 +27,7 @@ def Message(msg, color):
     DISPLAY.blit(msgs, [100, 100])
 
 
-def Our_snake(snake_block, snake_list):
+def draw_snake(snake_block, snake_list):
     for x in snake_list:
         py.draw.rect(DISPLAY, BLUE, [x[0], x[1], snake_block, snake_block])
 
@@ -103,7 +103,7 @@ def game_loop():
         for x in SNAKE_LIST[:-1]:
             if x == SNAKE_HEAD:
                 GAME_CLOSE = True
-        Our_snake(SNAKE_BLOCK, SNAKE_LIST)
+        draw_snake(SNAKE_BLOCK, SNAKE_LIST)
         Score(Length_of_snake - 1)
         py.display.update()
         if X1 == food_x and Y1 == food_y:
